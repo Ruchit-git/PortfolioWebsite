@@ -1,0 +1,10 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Circular background -->
+  <circle cx="100" cy="100" r="90" fill="#6c63ff"/>
+  
+  <!-- Refined generic person silhouette -->
+  <!-- Head -->
+  <circle cx="100" cy="75" r="35" fill="#ffffff"/>
+  <!-- Body/Shoulders -->
+  <path d="M50,160 A50,50 0 0 1 150,160 Q100,190 50,160 Z" fill="#ffffff"/>
+</svg>

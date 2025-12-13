@@ -1,0 +1,50 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background board with a subtle grid and accent color -->
+  <rect x="5" y="5" width="90" height="90" rx="5" ry="5" fill="#343a40"/>
+
+  <!-- Grid lines -->
+  <g stroke="#212529" stroke-width="1">
+    <line x1="25" y1="5" x2="25" y2="95"/>
+    <line x1="45" y1="5" x2="45" y2="95"/>
+    <line x1="65" y1="5" x2="65" y2="95"/>
+    <line x1="85" y1="5" x2="85" y2="95"/>
+
+    <line x1="5" y1="25" x2="95" y2="25"/>
+    <line x1="5" y1="45" x2="95" y2="45"/>
+    <line x1="5" y1="65" x2="95" y2="65"/>
+    <line x1="5" y1="85" x2="95" y2="85"/>
+  </g>
+
+  <!-- Blocks with 3D effect -->
+  <defs>
+    <filter id="block3D" x="-50%" y="-50%" width="200%" height="200%">
+      <feOffset result="offOut" in="SourceAlpha" dx="2" dy="2" />
+      <feGaussianBlur result="blurOut" in="offOut" stdDeviation="1.5" />
+      <feComponentTransfer in="blurOut" result="shadow">
+        <feFuncA type="linear" slope="0.5"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="SourceGraphic"/>
+        <feMergeNode in="shadow"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Blue block (L-shape) -->
+  <rect x="15" y="15" width="20" height="20" fill="#007bff" filter="url(#block3D)"/>
+  <rect x="15" y="35" width="20" height="20" fill="#007bff" filter="url(#block3D)"/>
+  <rect x="15" y="55" width="20" height="20" fill="#007bff" filter="url(#block3D)"/>
+  <rect x="35" y="55" width="20" height="20" fill="#007bff" filter="url(#block3D)"/>
+  
+  <!-- Green block (Z-shape) -->
+  <rect x="55" y="15" width="20" height="20" fill="#28a745" filter="url(#block3D)"/>
+  <rect x="35" y="35" width="20" height="20" fill="#28a745" filter="url(#block3D)"/>
+  <rect x="55" y="35" width="20" height="20" fill="#28a745" filter="url(#block3D)"/>
+  <rect x="75" y="55" width="20" height="20" fill="#28a745" filter="url(#block3D)"/>
+
+  <!-- Yellow block (Square) -->
+  <rect x="55" y="75" width="20" height="20" fill="#ffc107" filter="url(#block3D)"/>
+  <rect x="75" y="75" width="20" height="20" fill="#ffc107" filter="url(#block3D)"/>
+  <rect x="55" y="55" width="20" height="20" fill="#ffc107" filter="url(#block3D)"/>
+  <rect x="75" y="55" width="20" height="20" fill="#ffc107" filter="url(#block3D)"/>
+</svg>

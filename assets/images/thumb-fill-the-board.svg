@@ -1,0 +1,28 @@
+<svg width="100%" height="100%" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg" style="background-color:#343a40;">
+  <style>
+    .cell { fill: #495057; stroke: #343a40; stroke-width: 2; }
+    .filled { fill: #6c63ff; }
+    .highlight { fill: #ffc107; }
+  </style>
+  <defs>
+    <rect id="cell-shape" width="25" height="25" rx="3"/>
+  </defs>
+
+  <!-- 4x4 Grid -->
+  <use href="#cell-shape" x="40" y="25" class="cell filled"/>
+  <use href="#cell-shape" x="70" y="25" class="cell filled"/>
+  <use href="#cell-shape" x="100" y="25" class="cell"/>
+  <use href="#cell-shape" x="130" y="25" class="cell"/>
+
+  <use href="#cell-shape" x="40" y="55" class="cell filled"/>
+  <use href="#cell-shape" x="70" y="55" class="cell highlight"/>
+  <use href="#cell-shape" x="100" y="55" class="cell"/>
+  <use href="#cell-shape" x="130" y="55" class="cell filled"/>
+
+  <use href="#cell-shape" x="40" y="85" class="cell"/>
+  <use href="#cell-shape" x="70" y="85" class="cell filled"/>
+  <use href="#cell-shape" x="100" y="85" class="cell"/>
+  <use href="#cell-shape" x="130" y="85" class="cell filled"/>
+  
+  <text x="100" y="135" font-family="Poppins, sans-serif" font-size="12" fill="#adb5bd" text-anchor="middle">Fill The Board</text>
+</svg>
