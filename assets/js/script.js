@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Preloader
+    const preloader = document.getElementById('preloader');
+    window.addEventListener('load', function() {
+        if (preloader) {
+            preloader.style.display = 'none';
+        }
+    });
+
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -26,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 "assets/images/Ultimate Profiler/Screenshot 2025-12-09 004010.png",
                 "assets/images/Ultimate Profiler/Card image.png"
             ],
-            link: "https://assetstore.unity.com/preview/349284/1192896", // UPDATED LINK
+            storeLink: "https://assetstore.unity.com/preview/349284/1192896", // Asset Store Link
             tags: ["Unity", "C#", "Asset Store"]
         },
         "customize-books": {
@@ -37,7 +45,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 "assets/images/customize-books/screenshot1.svg",
                 "assets/images/customize-books/screenshot2.svg"
             ],
-            link: "#",
+            // This project doesn't have app links, so keeping a general link if any, or removing.
+
             tags: ["HTML", "CSS", "JavaScript", "Firebase"]
         },
         "box-blast": {
@@ -54,7 +63,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 "assets/images/box-blast/screenshot7.webp",
                 "assets/images/box-blast/screenshot8.webp"
             ],
-            link: "https://play.google.com/store/apps/details?id=com.dds.boxblastshooter&pcampaignid=web_share",
+            appLinks: {
+                android: "https://play.google.com/store/apps/details?id=com.dds.boxblastshooter",
+                ios: "https://apps.apple.com/ph/app/rescue-box-water-puzzle-game/id6739194972"
+            },
             tags: ["Unity", "C#"]
         },
         "flip-the-tile": {
@@ -66,7 +78,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 "assets/images/flip-the-tile/screenshot2.webp",
                 "assets/images/flip-the-tile/screenshot3.webp"
             ],
-            link: "https://play.google.com/store/apps/details?id=com.hiru.flipthetile",
+            appLinks: {
+                android: "https://play.google.com/store/apps/details?id=com.hiru.flipthetile",
+                ios: "https://apps.apple.com/ph/app/flip-the-tile-matching-game/id6464108409"
+            },
             tags: ["Unity", "C#", "Mobile", "Puzzle", "Memory"]
         },
         "final-fight": {
@@ -83,7 +98,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 "assets/images/final-fight/screenshot7.webp",
                 "assets/images/final-fight/screenshot8.webp"
             ],
-            link: "https://play.google.com/store/apps/details?id=com.dayd.birdvsdragon&pcampaignid=web_share",
+            appLinks: {
+                android: "https://play.google.com/store/apps/details?id=com.dayd.birdvsdragon",
+                ios: "https://apps.apple.com/ph/app/final-fight-action-battle/id6503291841"
+            },
             tags: ["Unity", "C#"]
         },
         "pop-the-ball": {
@@ -99,7 +117,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 "assets/images/pop-the-ball/screenshot6.webp",
                 "assets/images/pop-the-ball/screenshot7.webp"
             ],
-            link: "https://play.google.com/store/apps/details?id=com.dayd.poptheball&pcampaignid=web_share",
+            appLinks: {
+                android: "https://play.google.com/store/apps/details?id=com.dayd.poptheball",
+                ios: "https://apps.apple.com/ph/app/pop-the-ball-match-puzzle/id6469126543"
+            },
             tags: ["Unity", "C#"]
         },
         "3d-maze": {
@@ -113,7 +134,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 "assets/images/3d-maze/screenshot4.jpg",
                 "assets/images/3d-maze/screenshot5.jpg"
             ],
-            link: "https://apps.apple.com/ph/app/3d-maze-relaxing-puzzle/id6480049890",
+            appLinks: {
+                ios: "https://apps.apple.com/ph/app/3d-maze-relaxing-puzzle/id6480049890"
+            },
             tags: ["Unity", "C#"]
         },
         "rope-toss-twisted": {
@@ -143,7 +166,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 "assets/images/rope-toss-twisted/screenshot20.webp",
                 "assets/images/rope-toss-twisted/screenshot21.webp"
             ],
-            link: "https://play.google.com/store/apps/details?id=com.dds.ropetosspuzzle&pcampaignid=web_share",
+            appLinks: {
+                android: "https://play.google.com/store/apps/details?id=com.dds.ropetosspuzzle",
+                ios: "https://apps.apple.com/ph/app/rope-toss-twisted-flip-master/id6740608262"
+            },
             tags: ["Unity", "C#"]
         },
         "one-line-draw-it": {
@@ -155,7 +181,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 "assets/images/one-line-draw-it/screenshot2.webp",
                 "assets/images/one-line-draw-it/screenshot3.webp"
             ],
-            link: "https://play.google.com/store/apps/details?id=com.dds.onelinedraw",
+            appLinks: {
+                android: "https://play.google.com/store/apps/details?id=com.dds.onelinedraw",
+                ios: "https://apps.apple.com/ph/app/one-line-draw-it-puzzle-game/id6743704252"
+            },
             tags: ["Unity", "C#", "Mobile", "Puzzle"]
         },
         "balls-vs-walls": {
@@ -168,7 +197,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 "assets/images/balls-vs-walls/screenshot3.png",
                 "assets/images/balls-vs-walls/screenshot4.png"
             ],
-            link: "https://www.taptap.io/app/33592300",
+            appLinks: {
+                taptap: "https://www.taptap.io/app/33592300"
+            },
             tags: ["Unity", "C#"]
         },
         "fill-the-board": {
@@ -177,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function() {
             images: [
                 "assets/images/fill-the-board/icon.svg"
             ],
-            link: "#",
+
             tags: ["Unity", "C#"]
         }
     };
@@ -209,115 +240,137 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Project Modal Logic with Full Accessibility
-    const projectModal = document.getElementById('projectModal');
-    let lastFocusedElement;
+    // Function to populate the project modal with project data
+    function populateProjectModal(project, modalElement) {
+        const modalTitle = modalElement.querySelector('.modal-title');
+        const projectDescription = modalElement.querySelector('.project-description');
+        const projectCarouselInner = modalElement.querySelector('.carousel-inner');
+        let projectLinkContainer = modalElement.querySelector('.project-link-container');
 
-    projectModal.addEventListener('show.bs.modal', function (event) {
-        lastFocusedElement = document.activeElement; // Save the element that was focused before the modal opened
-
-        const button = event.relatedTarget; // Button that triggered the modal
-        const projectContainer = button.closest('[data-project]');
-        if (!projectContainer) return;
-
-        const projectId = projectContainer.dataset.project;
-        const project = projects[projectId];
-
-        const modalTitle = projectModal.querySelector('.modal-title');
-        const projectDescription = projectModal.querySelector('.project-description');
-        const projectCarouselInner = projectModal.querySelector('.carousel-inner');
-        const projectLinkBtn = projectModal.querySelector('.project-link');
-
-        // --- DEBUG LOGS START ---
-        console.log('--- Modal Show Event ---');
-        console.log('Project ID:', projectId);
-        console.log('Project Link from data:', project.link);
-        console.log('projectLinkBtn initial HTML:', projectLinkBtn.outerHTML);
-        // --- DEBUG LOGS END ---
-
+        // Set modal title and description
         modalTitle.textContent = project.title;
-        
+
+        // Build tags HTML
         let tagsHTML = '<div class="project-tags mb-3">';
-        project.tags.forEach(tag => {
-            tagsHTML += `<span class="project-tag">${tag}</span>`;
-        });
+        if (project.tags) {
+            project.tags.forEach(tag => {
+                tagsHTML += `<span class="project-tag">${tag}</span>`;
+            });
+        }
         tagsHTML += '</div>';
         projectDescription.innerHTML = project.description + tagsHTML;
 
-        // --- DEBUG LOGS START ---
-        console.log('projectLinkBtn before link logic:', projectLinkBtn.outerHTML);
-        // --- DEBUG LOGS END ---
-
-        if (project.link && project.link !== '#') {
-            projectLinkBtn.href = project.link;
-            projectLinkBtn.classList.remove('disabled-link');
-            projectLinkBtn.removeAttribute('aria-disabled');
-            projectLinkBtn.setAttribute('tabindex', '0'); // Make it tabbable
+        // Clear and create link container if it doesn't exist
+        if (projectLinkContainer) {
+            projectLinkContainer.innerHTML = ''; // Clear previous links
         } else {
-            projectLinkBtn.removeAttribute('href');
-            projectLinkBtn.classList.add('disabled-link');
-            projectLinkBtn.setAttribute('aria-disabled', 'true'); // For accessibility
-            projectLinkBtn.setAttribute('tabindex', '-1'); // Remove from tab order
+            projectLinkContainer = document.createElement('div');
+            projectLinkContainer.classList.add('project-link-container', 'mt-3', 'd-flex', 'flex-wrap', 'gap-2');
+            projectDescription.after(projectLinkContainer); // Insert after the description
         }
-        projectLinkBtn.style.display = 'block'; // Always display
-        // --- DEBUG LOGS START ---
-        console.log('projectLinkBtn after link logic:', projectLinkBtn.outerHTML);
-        // --- DEBUG LOGS END ---
 
+        // Dynamically create and add link buttons
+        const createLinkButton = (href, text, iconClass, btnClass, ariaLabel) => {
+            const linkBtn = document.createElement('a');
+            linkBtn.href = href;
+            linkBtn.target = "_blank";
+            linkBtn.rel = "noopener noreferrer"; // Security best practice for external links
+            linkBtn.classList.add('btn', btnClass, 'd-inline-flex', 'align-items-center');
+            linkBtn.setAttribute('aria-label', ariaLabel);
+            linkBtn.innerHTML = `<i class="${iconClass} me-2"></i> ${text}`;
+            return linkBtn;
+        };
+
+        if (project.storeLink && project.storeLink !== '#') {
+            projectLinkContainer.appendChild(createLinkButton(project.storeLink, 'View on Asset Store', 'fas fa-store', 'btn-primary', `View ${project.title} on the Unity Asset Store`));
+        }
+
+        if (project.appLinks) {
+            if (project.appLinks.android) {
+                projectLinkContainer.appendChild(createLinkButton(project.appLinks.android, 'Google Play', 'fab fa-google-play', 'btn-success', `View ${project.title} on Google Play`));
+            }
+            if (project.appLinks.ios) {
+                projectLinkContainer.appendChild(createLinkButton(project.appLinks.ios, 'App Store', 'fab fa-apple', 'btn-dark', `View ${project.title} on the App Store`));
+            }
+            if (project.appLinks.taptap) {
+                projectLinkContainer.appendChild(createLinkButton(project.appLinks.taptap, 'Tap Tap', 'fas fa-mobile-alt', 'btn-danger', `View ${project.title} on Tap Tap`));
+            }
+        }
+        
+        // Hide container if no links are present
+        projectLinkContainer.style.display = projectLinkContainer.hasChildNodes() ? 'flex' : 'none';
+
+        // Populate carousel
         projectCarouselInner.innerHTML = '';
         project.images.forEach((imgSrc, index) => {
             const carouselItem = document.createElement('div');
             carouselItem.classList.add('carousel-item');
             if (index === 0) carouselItem.classList.add('active');
-            carouselItem.innerHTML = `<img src="${imgSrc}" class="d-block w-100" alt="${project.title} Screenshot ${index + 1}">`;
+
+            const img = document.createElement('img');
+            img.className = 'd-block w-100';
+            img.alt = `${project.title} Screenshot ${index + 1}`;
+            // Implement lazy loading for modal images
+            if (index === 0) {
+                img.src = imgSrc; // Load the first image immediately
+            } else {
+                img.dataset.src = imgSrc; // Defer loading of other images
+            }
+            
+            carouselItem.appendChild(img);
             projectCarouselInner.appendChild(carouselItem);
         });
+    }
+
+    // Project Modal Logic
+    const projectModal = document.getElementById('projectModal');
+    let lastFocusedElement;
+
+    projectModal.addEventListener('show.bs.modal', function (event) {
+        lastFocusedElement = document.activeElement;
+
+        const button = event.relatedTarget;
+            const projectContainer = button.closest('[data-project]');
+        if (!projectContainer) return;
+
+        const projectId = projectContainer.dataset.project;
+        const project = projects[projectId];
+
+        if (project) {
+            populateProjectModal(project, projectModal);
+        }
     });
 
+    // Lazy load images within the carousel once the modal is shown
     projectModal.addEventListener('shown.bs.modal', function () {
+        const imagesToLoad = projectModal.querySelectorAll('img[data-src]');
+        imagesToLoad.forEach(img => {
+            img.src = img.dataset.src;
+            img.removeAttribute('data-src');
+        });
+
         // Focus trapping logic
         const focusableElements = projectModal.querySelectorAll(
-            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1])'
+            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
         );
         const firstElement = focusableElements[0];
         const lastElement = focusableElements[focusableElements.length - 1];
 
-        // Set initial focus on the modal itself or the first focusable element
-        if(firstElement) firstElement.focus();
-
-        // Ensure projectLinkBtn's click event works as expected
-        const projectLinkBtn = projectModal.querySelector('.project-link');
-        if (projectLinkBtn) {
-            projectLinkBtn.addEventListener('click', function(e) {
-                // --- DEBUG LOGS START ---
-                console.log('--- Project Link Button Clicked ---');
-                console.log('Button href:', this.href);
-                console.log('Button has href attribute:', this.hasAttribute('href'));
-                console.log('Button has disabled-link class:', this.classList.contains('disabled-link'));
-                // --- DEBUG LOGS END ---
-                // Check if the link is meant to be active (has href)
-                if (!this.hasAttribute('href') || this.classList.contains('disabled-link')) {
-                    console.log('Preventing default click behavior (link is disabled)'); // DEBUG
-                    e.preventDefault(); // Prevent default if it's disabled
-                }
-                e.stopPropagation(); // Prevent propagation to parent elements
-            });
-        }
+        if (firstElement) firstElement.focus();
 
         projectModal.addEventListener('keydown', function(e) {
             if (e.key !== 'Tab') return;
 
-            if (e.shiftKey) { // if shift + tab is pressed
+            if (e.shiftKey) {
                 if (document.activeElement === firstElement) {
                     lastElement.focus();
                     e.preventDefault();
                 }
-            } else { // if tab is pressed
+            } else {
                 if (document.activeElement === lastElement) {
                     firstElement.focus();
                     e.preventDefault();
                 }
-                e.stopPropagation(); // Add stopPropagation here as well to prevent interference with other elements
             }
         });
     });
@@ -329,21 +382,55 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Initialize ScrollReveal
-    // You'll need to replace 'your-font-awesome-kit-id.js' in index.html with your actual Font Awesome kit ID
-    // and ideally get a ScrollReveal CDN that is compatible with modern browsers if this one fails.
-    if (typeof ScrollReveal !== 'undefined') {
-        ScrollReveal().reveal('.hero-section h1', { delay: 200, origin: 'left', distance: '50px' });
-        ScrollReveal().reveal('.hero-section p.lead', { delay: 400, origin: 'right', distance: '50px' });
-        ScrollReveal().reveal('.hero-section .btn', { delay: 600, interval: 100, origin: 'bottom', distance: '30px' });
-        
-        ScrollReveal().reveal('#about .col-md-4', { delay: 200, origin: 'left', distance: '50px' });
-        ScrollReveal().reveal('#about .col-md-8', { delay: 400, origin: 'right', distance: '50px' });
-
-        ScrollReveal().reveal('.skill-card', { delay: 100, interval: 100, origin: 'bottom', distance: '30px' });
-
-        ScrollReveal().reveal('.project-card', { delay: 100, interval: 100, origin: 'bottom', distance: '30px' });
-
-        ScrollReveal().reveal('#contact form', { delay: 200, origin: 'bottom', distance: '50px' });
-    }
-});
+            // Initialize ScrollReveal
+            // You'll need to replace 'your-font-awesome-kit-id.js' in index.html with your actual Font Awesome kit ID
+            // and ideally get a ScrollReveal CDN that is compatible with modern browsers if this one fails.
+            if (typeof ScrollReveal !== 'undefined') {
+                ScrollReveal().reveal('.hero-section h1', { delay: 200, origin: 'left', distance: '50px' });
+                ScrollReveal().reveal('.hero-section p.lead', { delay: 400, origin: 'right', distance: '50px' });
+                ScrollReveal().reveal('.hero-section .btn', { delay: 600, interval: 100, origin: 'bottom', distance: '30px' });
+                
+                ScrollReveal().reveal('#about .col-md-4', { delay: 200, origin: 'left', distance: '50px' });
+                ScrollReveal().reveal('#about .col-md-8', { delay: 400, origin: 'right', distance: '50px' });
+    
+                ScrollReveal().reveal('.skill-card', { delay: 100, interval: 100, origin: 'bottom', distance: '30px' });
+    
+                ScrollReveal().reveal('.project-card', { delay: 100, interval: 100, origin: 'bottom', distance: '30px' });
+    
+                ScrollReveal().reveal('#contact form', { delay: 200, origin: 'bottom', distance: '50px' });
+            }
+    
+                    // Bootstrap form validation
+                    const contactForm = document.querySelector('#contact form');
+                    if (contactForm) {
+                        contactForm.addEventListener('submit', function (event) {
+                            if (!contactForm.checkValidity()) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            contactForm.classList.add('was-validated');
+                        }, false);
+                    }
+            
+                    // Back to top button
+                    const backToTopButton = document.getElementById("back-to-top");
+            
+                    if (backToTopButton) {
+                        window.addEventListener("scroll", () => {
+                            if (window.pageYOffset > 300) {
+                                backToTopButton.style.display = "block";
+                            } else {
+                                backToTopButton.style.display = "none";
+                            }
+                        });
+            
+                        backToTopButton.addEventListener("click", (e) => {
+                            e.preventDefault();
+                            window.scrollTo({
+                                top: 0,
+                                behavior: "smooth"
+                            });
+                        });
+                    }
+                });
+            
