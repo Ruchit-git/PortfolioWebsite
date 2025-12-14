@@ -350,20 +350,29 @@ footer {
     right: 25px;
     display: none;
     z-index: 1000;
-    width: 40px;
-    height: 40px;
+    min-width: 50px;
+    min-height: 50px;
     border-radius: 50%;
     background-color: #10b981; /* Accent color - Classic & Professional */
     color: #fff;
     text-align: center;
-    line-height: 40px;
+    line-height: 50px;
     font-size: 1.2rem;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Added shadow */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+    border: none;
+    padding: 0;
+    cursor: pointer;
 }
 
 .back-to-top:hover {
     background-color: #0e9f6e; /* Darker accent - Classic & Professional */
     color: #fff;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Ensure the button is visible when shown */
+.back-to-top.visible {
+    display: block;
 }

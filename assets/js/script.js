@@ -414,22 +414,37 @@ document.addEventListener('DOMContentLoaded', function() {
             
                     // Back to top button
                     const backToTopButton = document.getElementById("back-to-top");
-            
+
                     if (backToTopButton) {
-                        window.addEventListener("scroll", () => {
+                        // Show/hide back to top button based on scroll position
+                        const toggleBackToTop = () => {
                             if (window.pageYOffset > 300) {
                                 backToTopButton.style.display = "block";
                             } else {
                                 backToTopButton.style.display = "none";
                             }
-                        });
-            
+                        };
+
+                        // Initially check if button should be displayed
+                        toggleBackToTop();
+
+                        // Add scroll event listener
+                        window.addEventListener("scroll", toggleBackToTop);
+
+                        // Smooth scroll to top when button is clicked
                         backToTopButton.addEventListener("click", (e) => {
                             e.preventDefault();
-                            window.scrollTo({
-                                top: 0,
-                                behavior: "smooth"
-                            });
+
+                            // For better browser compatibility, use a fallback if smooth scrolling isn't supported
+                            if (window.scrollBehavior === undefined || !window.scrollBehavior) {
+                                // Fallback for older browsers
+                                window.scrollTo(0, 0);
+                            } else {
+                                window.scrollTo({
+                                    top: 0,
+                                    behavior: "smooth"
+                                });
+                            }
                         });
                     }
                 });
